@@ -17,8 +17,14 @@
             <button type="submit">Change Username</button>
         </form>
         <p id="result"></p>
+        <button id="getSessionIdBtn">Get Session ID</button>
     </div>
     <script src="script.js"></script>
     <script src="snow.js"></script>
+    <script>
+        document.getElementById('getSessionIdBtn').addEventListener('click', function() {
+            window.location.href = 'get-session-id.html';
+        });
+    </script>
 </body>
 </html>
