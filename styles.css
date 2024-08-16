@@ -9,6 +9,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden; /* Prevent scrollbars from appearing due to snow effect */
+    position: relative; /* Ensure snow container positions correctly */
 }
 
 .container {
@@ -72,6 +73,7 @@ p#result {
     font-size: 1em;
     opacity: 0.8;
     pointer-events: none;
+    animation: fall linear infinite;
 }
 
 /* Snowflake animation */
