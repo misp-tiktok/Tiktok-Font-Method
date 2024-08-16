@@ -11,7 +11,12 @@ document.getElementById("changeUsernameForm").addEventListener("submit", functio
         },
         body: JSON.stringify({ sessionId, newUsername })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();  // Ensure the response is JSON
+    })
     .then(data => {
         document.getElementById("result").textContent = data.message;
     })
