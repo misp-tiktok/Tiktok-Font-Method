@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Username Changer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Change TikTok Username</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1>TikTok Font Method</h1>
-        <h2>dsc.gg/misp</h2>
-        <form id="changeUsernameForm">
-            <input type="text" id="sessionId" placeholder="Enter your session ID" required>
-            <input type="text" id="newUsername" placeholder="Enter new username" required>
-            <button type="submit">Change Username</button>
-        </form>
-        <p id="result"></p>
-        <button id="getSessionIdBtn">Credits</button>
-    </div>
-    <script src="script.js"></script>
-    <script src="snow.js"></script>
-    <script>
-        document.getElementById('getSessionIdBtn').addEventListener('click', function() {
-            window.location.href = 'credits.html';
-        });
-    </script>
+    <h1>Change TikTok Username</h1>
+    <form id="usernameForm">
+        <label for="sessionId">Session ID:</label>
+        <input type="text" id="sessionId" name="sessionId" required><br>
+        <label for="deviceId">Device ID:</label>
+        <input type="text" id="deviceId" name="deviceId" required><br>
+        <label for="iid">IID:</label>
+        <input type="text" id="iid" name="iid" required><br>
+        <label for="lastUsername">Current Username:</label>
+        <input type="text" id="lastUsername" name="lastUsername" required><br>
+        <label for="newUsername">New Username:</label>
+        <input type="text" id="newUsername" name="newUsername" required><br>
+        <button type="button" id="submitButton">Change Username</button>
+    </form>
+    <p id="result"></p>
 </body>
 </html>
