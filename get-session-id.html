@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Session ID</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Get Your Session ID</h1>
+        <p>To obtain your session ID, please follow the steps below:</p>
+        <ol>
+            <li><a href="https://www.tiktok.com/login" target="_blank">Log in to TikTok</a></li>
+            <li>Complete any captcha if prompted.</li>
+            <li>After logging in, return to this page.</li>
+        </ol>
+        <p>Your Session ID will be displayed here after logging in:</p>
+        <textarea id="sessionId" readonly></textarea>
+        <button id="copyBtn">Copy Session ID</button>
+        <p id="status"></p>
+    </div>
+    <script src="get-session-id.js"></script>
+</body>
+</html>
