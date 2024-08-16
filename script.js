@@ -1,27 +1,31 @@
-document.getElementById("changeUsernameForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('submitButton').addEventListener('click', () => {
+        const sessionId = document.getElementById('sessionId').value;
+        const deviceId = document.getElementById('deviceId').value;
+        const iid = document.getElementById('iid').value;
+        const lastUsername = document.getElementById('lastUsername').value;
+        const newUsername = document.getElementById('newUsername').value;
 
-    const sessionId = document.getElementById("sessionId").value;
-    const newUsername = document.getElementById("newUsername").value;
-
-    fetch("/change-username", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ sessionId, newUsername })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();  // Ensure the response is JSON
-    })
-    .then(data => {
-        document.getElementById("result").textContent = data.message;
-    })
-    .catch(error => {
-        document.getElementById("result").textContent = "An error occurred.";
-        console.error("Error:", error);
+        fetch('/change_username', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                session_id: sessionId,
+                device_id: deviceId,
+                iid: iid,
+                last_username: lastUsername,
+                new_username: newUsername
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('result').textContent = data.result;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('result').textContent = 'An error occurred. Please try again.';
+        });
     });
 });
